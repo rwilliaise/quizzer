@@ -1,0 +1,12 @@
+{
+  "config": {
+    "type": "chapter_vocab",
+    "locale": "utf-8",
+    "native": "ja_jp"
+  },
+  "elements": {
+    "height": {
+      "image_url": ""
+    }
+  }
+}
