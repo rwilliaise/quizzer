@@ -6,7 +6,7 @@ const path = require('path')
 const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = {
-  entry: './out/index.js',
+  entry: './src/index.tsx',
   mode: 'production',
   devtool: 'source-map',
   output: {
@@ -23,13 +23,6 @@ module.exports = {
   plugins: [
     new CopyPlugin({
       patterns: [
-        {
-          from: 'src/**/*.mp3',
-          to ({ absoluteFilename }) {
-            const ret = absoluteFilename.match(/src[/\\](?<path>.*)/)
-            return path.resolve(__dirname, 'out', ret.groups.path)
-          }
-        },
         {
           from: '**/*',
           context: 'public',
@@ -51,8 +44,17 @@ module.exports = {
       new TerserPlugin()
     ]
   },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js'],
+    extensionAlias: {
+      '.js': ['.js', '.ts'],
+      '.cjs': ['.cjs', '.cts'],
+      '.mjs': ['.mjs', '.mts']
+    }
+  },
   module: {
     rules: [
+      { test: /\.([cm]?ts|tsx)$/, loader: 'ts-loader' },
       {
         test: /\.mp3$/,
         use: [
