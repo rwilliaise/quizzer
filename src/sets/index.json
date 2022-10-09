@@ -1,5 +1,8 @@
 {
   "set": {
-    "chapter_6": "chapter_6/index.json"
+    "japanese_2": {
+      "chapter_6": "chapter_6/index.json",
+      "chapter_6_1": "chapter_6_1/index.json"
+    }
   }
 }
