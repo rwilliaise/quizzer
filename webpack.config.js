@@ -7,7 +7,7 @@ const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = {
   entry: './src/index.tsx',
-  mode: 'production',
+  mode: 'development',
   devtool: 'source-map',
   output: {
     filename: 'main.js',
@@ -37,11 +37,11 @@ module.exports = {
     })
   ],
   optimization: {
-    minimize: true,
+    //   minimize: true,
     minimizer: [
       new HtmlMinimizerPlugin(),
-      new CssMinimizerPlugin(),
-      new TerserPlugin()
+      new CssMinimizerPlugin() // ,
+      //      new TerserPlugin()
     ]
   },
   resolve: {
