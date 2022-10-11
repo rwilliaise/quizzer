@@ -1,8 +1,19 @@
 import { useRouteError } from 'react-router'
 import React from 'react'
 
-export default function ErrorPage (): React.ReactElement {
-  const err = useRouteError() as { status: number, statusText: string }
+export default function QuizzerRouteError ({ status, statusText }: { status?: number, statusText?: string }): React.ReactElement {
+  let err
+  try {
+    err = useRouteError() as { status: number, statusText: string }
+  } catch (e) {
+    err = undefined
+  }
+  if (err === undefined) {
+    if (status === undefined || statusText === undefined) {
+      return (<></>)
+    }
+    err = { status, statusText }
+  }
 
   return (
     <div>
