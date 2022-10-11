@@ -31,17 +31,17 @@ module.exports = {
         {
           from: 'index.html',
           context: 'public',
-          to: path.resolve(__dirname, 'dist', '404.html') // neat lil hack to fix react-router
+          to: path.resolve(__dirname, 'dist', '404.html') // neat lil hack to fix react-router on gh pages
         }
       ]
     })
   ],
   optimization: {
-    //   minimize: true,
+    // minimize: true,
     minimizer: [
       new HtmlMinimizerPlugin(),
       new CssMinimizerPlugin() // ,
-      //      new TerserPlugin()
+      // new TerserPlugin()
     ]
   },
   resolve: {
@@ -59,6 +59,15 @@ module.exports = {
         test: /\.mp3$/,
         use: [
           { loader: 'file-loader' }
+        ]
+      },
+      {
+        test: /\.css$/,
+        include: path.join(__dirname, 'src'),
+        use: [
+          'style-loader',
+          'css-loader',
+          'postcss-loader'
         ]
       }
     ]

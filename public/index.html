@@ -1,7 +1,20 @@
 <!DOCTYPE html>
 <html>
 	<head>
-    <script src="./main.js" type="module"></script>
+    <script>
+      // retain parity with dev-server + github pages
+      (() => {
+        const ON_GITHUB = window.location.host.endsWith('.github.io')
+        
+        const script = document.createElement('script')
+        script.src = ON_GITHUB ? '/quizzer/main.js' : '/main.js'
+        script.type = 'module'
+
+        document.head.appendChild(script)
+      })()
+    </script>
+    <!-- <link type="stylesheet" href="styles.css" /> -->
+    <!-- <script src="./main.js" type="module"></script> -->
 	</head>
 	<body>
     <noscript>Unfortunately, quizzer requires JavaScript to be enabled to run.</noscript>

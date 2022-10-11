@@ -1,5 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
+export const locales = [
+  'en_us',
+  'ja_jp'
+]
+
+console.log(navigator.language)
+
 const settingsSlice = createSlice({
   name: 'settings',
   initialState: {

@@ -1,8 +1,17 @@
 {
   "set": {
     "japanese_2": {
-      "chapter_6": "chapter_6/index.json",
-      "chapter_6_1": "chapter_6_1/index.json"
+      "__loc": {
+        "en_us": "Japanese 2"
+      },
+      "chapter_6": {
+        "file": "jp_chapter_6/index.json",
+        "en_us": "Chapter 6 Vocab"
+      },
+      "chapter_6_1": {
+        "file": "jp_chapter_6_1/index.json",
+        "en_us": "Chapter 6.1 Vocab"
+      }
     }
   }
 }
