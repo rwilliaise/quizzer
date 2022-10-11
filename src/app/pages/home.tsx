@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom'
 export default function QuizzerHome (): React.ReactElement {
   const firstOpen = useSelector((s: RootState) => s.persist.firstOpen)
   return (
-    <div className='mx-0'>
-      <h1>
+    <div>
+      <h1 className='bg-red-900 text-white'>
         quizzer - hello { firstOpen ? '' : 'again' }
       </h1>
       <h2>navigate</h2>
