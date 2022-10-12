@@ -4,6 +4,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const HtmlMinimizerPlugin = require('html-minimizer-webpack-plugin')
 const path = require('path')
 const TerserPlugin = require('terser-webpack-plugin')
+const { webpack } = require('webpack')
 
 module.exports = {
   entry: './src/index.tsx',
@@ -34,14 +35,14 @@ module.exports = {
           to: path.resolve(__dirname, 'dist', '404.html') // neat lil hack to fix react-router on gh pages
         }
       ]
-    })
+    }),
+    webpack.optimize.ModuleConcatenationPlugin()
   ],
   optimization: {
-    // minimize: true,
+    minimize: true,
     minimizer: [
       new HtmlMinimizerPlugin(),
-      new CssMinimizerPlugin() // ,
-      // new TerserPlugin()
+      new CssMinimizerPlugin()
     ]
   },
   resolve: {

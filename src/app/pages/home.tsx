@@ -7,11 +7,13 @@ export default function QuizzerHome (): React.ReactElement {
   const firstOpen = useSelector((s: RootState) => s.persist.firstOpen)
   return (
     <div>
-      <h1 className='bg-red-900 text-white'>
-        quizzer - hello { firstOpen ? '' : 'again' }
+      <h1 className='font-bold text-xl'>
+        hello { firstOpen ? '' : 'again' }
       </h1>
-      <h2>navigate</h2>
-      <Link to='/select'>select</Link>
+      <div className='px-4'>
+        <h2 className='font-bold text-lg'>navigate</h2>
+        <Link to='/select'>select</Link>
+      </div>
     </div>
   )
 }

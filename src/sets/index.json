@@ -1,7 +1,13 @@
 {
   "set": {
+    "japanese_1": {
+      "__loc": {
+        "en_us": "Japanese 1"
+      }
+    },
     "japanese_2": {
       "__loc": {
+        "__native": "ja_jp",
         "en_us": "Japanese 2"
       },
       "chapter_6": {
