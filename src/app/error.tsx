@@ -23,10 +23,12 @@ export default class QuizzerError extends React.Component<React.PropsWithChildre
     if (this.state.error !== null) {
       return (
         <>
-          <p>quizzer encountered an error.</p>
-          <p style={{ whiteSpace: 'pre-wrap' }}>
-            <code>{this.state.errorInfo?.componentStack}</code>
-          </p>
+          <div className='p-4'>
+            <p>quizzer encountered an error.</p>
+            <p style={{ whiteSpace: 'pre-wrap' }}>
+              <code>{this.state.errorInfo?.componentStack}</code>
+            </p>
+          </div>
         </>
 
       )

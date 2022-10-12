@@ -17,7 +17,7 @@ export default function QuizzerRouteError ({ status, statusText }: { status?: nu
 
   return (
     <div>
-      <h1>
+      <h1 className='font-bold text-2xl'>
         oh no - { err.status } { err.statusText }
       </h1>
 
@@ -25,7 +25,7 @@ export default function QuizzerRouteError ({ status, statusText }: { status?: nu
         if (err.status === 404) {
           return (
             <>
-              <p>page not found</p>
+              <p className='pb-2'>page not found</p>
               <p>try refreshing if it worked before, or the page may've been removed</p>
             </>
           )

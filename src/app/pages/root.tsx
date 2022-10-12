@@ -1,6 +1,6 @@
 import React from 'react'
 import { Outlet } from 'react-router'
-import { Link } from 'react-router-dom'
+import { Link, ScrollRestoration } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { RootState } from '../state'
 import GitHub from '@mui/icons-material/GitHub'
@@ -34,7 +34,7 @@ export default function QuizzerRoot (): React.ReactElement {
   const random = GOOFY_SAYINGS[Math.floor(Math.random() * GOOFY_SAYINGS.length)]
 
   return (
-    <div className='lg:mx-auto lg:max-w-6xl'>
+    <div className='px-4 lg:mx-auto lg:max-w-6xl'>
       <div className='sticky top-4 z-20'>
         <div className='relative z-20 flex h-16 w-full items-center justify-between'>
           <div className='text-center flex flex-col h-full items-center'>
@@ -44,7 +44,9 @@ export default function QuizzerRoot (): React.ReactElement {
             </Link>
           </div>
           <div className='flex items-center flex-col'>
-            <GitHub />
+            <div className='flex item-center'>
+              <a href='https://github.com/rwilliaise/quizzer'><GitHub className='text-slate-500'/></a>
+            </div>
             <SaveSizeText />
           </div>
         </div>

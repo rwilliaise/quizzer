@@ -3,8 +3,6 @@ const CopyPlugin = require('copy-webpack-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const HtmlMinimizerPlugin = require('html-minimizer-webpack-plugin')
 const path = require('path')
-const TerserPlugin = require('terser-webpack-plugin')
-const { webpack } = require('webpack')
 
 module.exports = {
   entry: './src/index.tsx',
@@ -18,6 +16,7 @@ module.exports = {
     static: {
       directory: path.resolve(__dirname, 'public')
     },
+    historyApiFallback: true,
     compress: true,
     port: 8000
   },
