@@ -35,11 +35,11 @@ module.exports = {
           to: path.resolve(__dirname, 'dist', '404.html') // neat lil hack to fix react-router on gh pages
         }
       ]
-    }),
-    webpack.optimize.ModuleConcatenationPlugin()
+    })
   ],
   optimization: {
     minimize: true,
+    concatenateModules: true,
     minimizer: [
       new HtmlMinimizerPlugin(),
       new CssMinimizerPlugin()
